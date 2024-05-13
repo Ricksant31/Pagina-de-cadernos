@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Preços</title>
+    <style>
+       body {
+            font-family: Courier, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fedcff;
+        }
+        #header {
+            background-color: #feb2ff;
+            padding: 10px;
+            text-align: center;
+        }
+        #header a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #000000;
+        }
+        #header a:hover {
+            color: #f700ff;
+        }
+        .container {
+            max-width: 80px;
+            margin: 0 auto;
+            padding: 20px;
+            
+        }
+        .produto {
+            display: inline-block; /* faz os produtos ficarem lado a lado */
+            margin: 0 10px; /* espaço entre os produtos */
+            vertical-align: top; /* alinha os produtos pela parte superior */
+        }
+        .produto img {
+            max-width: 100%;
+            height: auto;
+        }
+        button{
+            border-radius: 5px;
+            background-color: aliceblue;
+            color: #921464;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="index.html">Página Principal</a>
+        <a href="#">Tabela de Preços</a>
+        <a href="carrinho.html">Carrinho</a>
+    </div>
+    <div class="container">
+        <h1>Tabela de Preços</h1>
+        <div class="produto">
+            <img src="Edilza Teixeira.jpeg" alt="Caderno 1">
+            <p>Descrição do Caderno 1.</p>
+            <!-- Formulário para adicionar Caderno 1 ao carrinho -->
+            <form action="carrinho.html" method="post">
+                <input type="hidden" name="produto" value="Caderno 1">
+                <input type="hidden" name="preco" value="10.00">
+                <button type="submit">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        
+        <div class="produto">
+            <img src="caderno personalizado para faculdade.jpeg" alt="Caderno 2">
+            <p>Descrição do Caderno 2.</p>
+            <!-- Formulário para adicionar Caderno 2 ao carrinho -->
+            <form action="carrinho.html" method="post">
+                <input type="hidden" name="produto" value="Caderno 2">
+                <input type="hidden" name="preco" value="15.00">
+                <button type="submit">Adicionar ao Carrinho</button>
+            </form>
+        </div>
+        <!-- Adicione mais produtos conforme necessário -->
+    </div>
+</body>
+</html>

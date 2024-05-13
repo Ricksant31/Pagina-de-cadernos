@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho</title>
+    <style>
+         body {
+            font-family: Courier, Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fde7f9;
+        }
+        #header {
+            background-color: #fdc8f8;
+            padding: 10px;
+            text-align: center;
+        }
+        #header a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #000000;
+        }
+        #header a:hover {
+            color: #ff00dd;
+        }
+        .container {
+            max-width: 80px;
+            margin: auto;
+            padding: 20px;
+            margin-left: 10px;
+            
+        }
+        .produto {
+            display: inline-block; /* faz os produtos ficarem lado a lado */
+            margin: 0 10px; /* espaço entre os produtos */
+            vertical-align: top; /* alinha os produtos pela parte superior */
+        }
+        .produto img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <a href="index.html">Página Principal</a>
+        <a href="tabela_de_precos.html">Tabela de Preços</a>
+        <a href="#">Carrinho</a>
+    </div>
+    <div class="container">
+        <h1>Carrinho</h1>
+        <table>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+            <!-- PHP para mostrar os produtos adicionados -->
+            <?php
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                if (isset($_POST["produto"]) && isset($_POST["preco"])) {
+                    $produto = $_POST["produto"];
+                    $preco = $_POST["preco"];
+                    echo "<tr><td>$produto</td><td>$preco</td></tr>";
+                }
+            }
+            ?>
+        </table>
+    </div>
+</body>
+</html>
